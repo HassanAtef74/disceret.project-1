@@ -4,28 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace disceret.project_1
+namespace discrete.project_2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter  number 1:");
+            Console.WriteLine("Enter number 1:");
             int n1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter number2: ");
+            Console.WriteLine("Enter number 2:");
             int n2 = int.Parse(Console.ReadLine());
-            int sum = 0;
-            for (int x = n1; x <= n2; x++)
-            {
-                sum = 0;
+            int i, j;
 
-                for (int i = 2; i <= x / 2; i++)
+            for (i = n1; i <= n2; i++)
+            {
+                int count = 0;
+                for (j = 3; j <= i; j++)
                 {
-                    if (x % i == 0)
-                        sum += i;
+
+                    if (i % j == 0)
+                    { count = count + 1; }
                 }
-                if (sum == x)
-                    Console.WriteLine(x);
+
+                if (count <= 4)
+                { Console.WriteLine(i); }
+
+
             }
         }
     }
